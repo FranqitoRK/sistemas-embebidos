@@ -1,5 +1,4 @@
 #include <stdio.h>
-//Se realiza una inspección en una fábrica de pinturas, y se detectaron 20 infracciones. De cada infracción se tomó nota de los siguientes datos:-Tipo de Infracción (1, 2, 3, ó 4) -Valor de la multa -Gravedad de la infracción (‘L’,‘M’, ‘G’) Se pide informar al final del proceso: Los valores totales de la multa a pagar de acuerdo al tipo de gravedad. La leyenda “Clausurar fábrica” si la cantidad de infracciones 3 y 4 con gravedad “G” sean mayor a 3.
 struct Infraccion{
     int tipo;
     int cantidad;
@@ -16,17 +15,22 @@ int main() {
         scanf("%d",&infracciones[i].cantidad);
         printf("ingrese la gravedad de la infraccion (L,M,G): ");
         scanf("%s",&infracciones[i].gravedad);
-        total=total+infracciones[i].cantidad;
         if(infracciones[i].gravedad=='G' || infracciones[i].gravedad=='g'){
+            multag=multag+infracciones[i].cantidad;
             if(infracciones[i].tipo>=3){
                 cf++;   
             }
         }
+        if(infracciones[i].gravedad=='L' || infracciones[i].gravedad=='l'){
+            multal=multal+infracciones[i].cantidad;
+        }
+        if(infracciones[i].gravedad=='M' || infracciones[i].gravedad=='m'){
+            multam=multam+infracciones[i].cantidad;
+        }
     }
-    //printf("total a pagar: %d\n",total);
-    //hacer una multa para cada gravedad y printear
+    printf("\nTotal a pagar:\n-Multas G: $%d\n-Multas M: $%d\n-Multas L: $%d",multag,multam,multal);
     if(cf>=3){
-        printf("clausurar fabrica");
+        printf("\nCLAUSURAR FABRICA");
     }
     return 0;
 }
