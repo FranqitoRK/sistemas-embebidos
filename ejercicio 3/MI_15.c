@@ -4,11 +4,11 @@ struct Infraccion{
     int cantidad;
     char gravedad;
 };
-struct Infraccion infracciones[5];
+struct Infraccion infracciones[20];
 
 int main() {
     int i,multal=0,multam=0,multag=0,cf=0;
-    for(i=0;i<5;i++){
+    for(i=0;i<20;i++){
         printf("ingrese el tipo de infraccion: ");
         scanf("%d",&infracciones[i].tipo);
         printf("ingrese el valor de la infraccion: ");
