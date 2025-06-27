@@ -1,0 +1,17 @@
+package clase;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Lienzo extends JPanel //constructor (metodo)
+{
+	JLabel etiqueta1;
+	public Lienzo()
+	{
+		setLayout(null);
+		etiqueta1 = new JLabel("Ingrese Texto");
+		etiqueta1.setBounds(0, 0, 100, 30);
+		add (etiqueta1);
+	}
+	
+}

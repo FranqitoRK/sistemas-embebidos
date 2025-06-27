@@ -1,0 +1,31 @@
+package clase;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Lienzo extends JPanel implements ActionListener
+{
+	JLabel etiqueta1;
+	JButton boton;
+	public Lienzo()
+	{
+		setLayout(null);
+		etiqueta1 = new JLabel("Ingrese Texto");
+		etiqueta1.setBounds(100, 100, 100, 20);
+		add (etiqueta1);
+		boton = new JButton("cambiar");
+		boton.setBounds(100,200,100,30);
+		add(boton);
+		boton.addActionListener(this);
+	}
+	public void actionPerformed(ActionEvent evento) 
+	{
+		etiqueta1.setText("Egrese texto");
+		
+	}
+	
+}

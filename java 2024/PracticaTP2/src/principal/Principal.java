@@ -1,0 +1,14 @@
+package principal;
+
+import clases.Ventana;
+
+public class Principal
+{
+	public static void main (String[]args)
+	{
+		Ventana interfaz = new Ventana();
+		interfaz.setBounds(0,0,800,600);
+		interfaz.setResizable(false);
+		interfaz.setLocationRelativeTo(null);
+	}
+}

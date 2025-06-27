@@ -1,0 +1,48 @@
+package clase;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Lienzo extends JPanel implements ActionListener
+{
+	JLabel etiqueta1;
+	JButton boton;
+	JButton boton2;
+	public Lienzo()
+	{
+		setLayout(null);
+		setBackground(new Color(240,182,86));
+		etiqueta1 = new JLabel("Ingrese Texto");
+		etiqueta1.setBounds(260, 80, 100, 20);
+		add (etiqueta1);
+		boton = new JButton("cambiar");
+		boton.setBackground(new Color(154,209,64));
+		boton.setBounds(100,150,100,30);
+		boton.addActionListener(this);
+		add(boton);
+		boton2.addActionListener(this);
+		boton2 = new JButton("volver");
+		boton2.setBounds(100,200,100,30);
+		add(boton2);
+		
+	}
+	public void actionPerformed(ActionEvent evento) 
+	{
+		if(evento.getSource() == boton) 
+		{
+			etiqueta1.setText("Egrese texto");
+		}
+		if(evento.getSource() == boton2)
+		{
+			etiqueta1.setText("Ingrese texto");
+		}
+		
+		
+	}
+	
+}
